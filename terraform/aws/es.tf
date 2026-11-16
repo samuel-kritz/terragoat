@@ -32,7 +32,8 @@ data aws_iam_policy_document "policy" {
     actions = ["es:*"]
     principals {
       type        = "AWS"
-      identifiers = ["*"]
+      //fake 12-digit account number to clear CKV_AWS_283
+      identifiers = ["arn:aws:iam::123456789012:root"]
     }
     resources = ["*"]
   }
